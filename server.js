@@ -3,6 +3,11 @@ const cors = require('cors');
 require('dotenv').config();
 const { connectDB, sequelize } = require('./config/db');
 
+// Import models so Sequelize creates the tables
+const User = require('./models/User');
+const Supplier = require('./models/Supplier');
+const VerificationRequest = require('./models/VerificationRequest');
+
 const app = express();
 
 // Middleware

@@ -3,10 +3,13 @@ const cors = require('cors');
 require('dotenv').config();
 const { connectDB, sequelize } = require('./config/db');
 
-// Import models so Sequelize creates the tables
+// Import models
 const User = require('./models/User');
 const Supplier = require('./models/Supplier');
 const VerificationRequest = require('./models/VerificationRequest');
+
+// Import routes
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
@@ -14,6 +17,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Routes
+app.use('/api/auth', authRoutes);
 
 // Test route
 app.get('/', (req, res) => {

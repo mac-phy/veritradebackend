@@ -10,6 +10,13 @@ const VerificationRequest = require('./models/VerificationRequest');
 
 // Import routes
 const authRoutes = require('./routes/authRoutes');
+console.log('authRoutes:', typeof authRoutes);
+
+const verificationRoutes = require('./routes/verificationRoutes');
+console.log('verificationRoutes:', typeof verificationRoutes);
+
+const adminRoutes = require('./routes/adminRoutes');
+console.log('adminRoutes:', typeof adminRoutes);
 
 const app = express();
 
@@ -20,6 +27,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/verifications', verificationRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Test route
 app.get('/', (req, res) => {

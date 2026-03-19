@@ -17,6 +17,9 @@ console.log('verificationRoutes:', typeof verificationRoutes);
 
 const adminRoutes = require('./routes/adminRoutes');
 console.log('adminRoutes:', typeof adminRoutes);
+const documentRoutes = require('./routes/documentRoutes');
+console.log('documentRoutes:', typeof documentRoutes);
+
 
 const app = express();
 
@@ -29,6 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth', authRoutes);
 app.use('/api/verifications', verificationRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/documents', documentRoutes);
 
 // Test route
 app.get('/', (req, res) => {

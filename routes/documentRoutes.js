@@ -1,7 +1,7 @@
 ﻿const express = require('express');
 const router = express.Router();
 const upload = require('../middleware/upload');
-const authenticate = require('../middleware/authenticate');
+const authenticate = require('../middleware/authMiddleware');
 const { extractTextFromImage } = require('../services/ocrService');
 
 // POST /api/documents/scan

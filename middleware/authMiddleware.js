@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken');
-require('dotenv').config();
 
 // Verify JWT token and attach user to request
 const authenticate = (req, res, next) => {

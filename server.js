@@ -35,11 +35,15 @@ const startServer = async () => {
   const verificationRoutes = require('./routes/verificationRoutes');
   const adminRoutes = require('./routes/adminRoutes');
   const documentRoutes = require('./routes/documentRoutes');
-  
+  const reviewRoutes = require('./routes/reviewRoutes');
+
+ 
   app.use('/api/auth', authRoutes);
   app.use('/api/verifications', verificationRoutes);
   app.use('/api/admin', adminRoutes);
   app.use('/api/documents', documentRoutes);
+   app.use('/api/reviews', reviewRoutes);
+  
   
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`✅ VeriTrade server running on port ${PORT}`);

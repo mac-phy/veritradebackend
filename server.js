@@ -41,7 +41,7 @@ const startServer = async () => {
   app.use('/api/admin', adminRoutes);
   app.use('/api/documents', documentRoutes);
   
-  app.listen(PORT, () => {
+  app.listen(PORT, '0.0.0.0', () => {
     console.log(`✅ VeriTrade server running on port ${PORT}`);
   });
 };

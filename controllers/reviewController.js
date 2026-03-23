@@ -42,10 +42,6 @@ const getBusinessReviews = async (req, res) => {
 
     const reviews = await Review.findAll({
       where: { registration_number: registration_number.toUpperCase() },
-      include: [{
-        model: User,
-        attributes: ['name']
-      }],
       order: [['createdAt', 'DESC']]
     });
 

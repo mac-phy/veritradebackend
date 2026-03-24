@@ -1,18 +1,14 @@
 const express = require('express');
 const cors = require('cors');
-const fileUpload = require('express-fileupload');
 
 
 const app = express();
 
 // Middleware
 app.use(cors());
+app.use(fileUpload());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(fileUpload({
-  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB max
-  useTempFiles: false
-}));
 
 // Test route
 app.get('/', (req, res) => {
